@@ -34,7 +34,7 @@ class CompanyController extends Controller
     {
         return request()->validate([
             'name' => 'required|max:50',
-            'cui' => 'required|integer|digits_between:2,10',
+            'cui' => 'required|cif',
             'rc' => 'required',
             'email' => 'required|email',
             'rl' => 'required|alpha_spaces|max:30',
