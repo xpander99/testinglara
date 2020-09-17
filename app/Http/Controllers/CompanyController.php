@@ -10,7 +10,9 @@ class CompanyController extends Controller
 
     public function index(){
 
-        return view('company');
+        $companies = Company::all();
+
+        return view('company',compact('companies'));
 
     }
 
@@ -19,7 +21,7 @@ class CompanyController extends Controller
 
         Company::create($this->validateRequest());
 
-        return redirect('/company');
+        return redirect(route('company.index'));
 
     }
 

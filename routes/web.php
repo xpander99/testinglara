@@ -15,5 +15,5 @@ use App\Http\Controllers\CompanyController;
 */
 
 
-Route::post('/company', [CompanyController::class, 'store']);
-Route::get('/company', [CompanyController::class,'index']);
+Route::post('/company', [CompanyController::class, 'store'])->name('company.store');
+Route::get('/company', [CompanyController::class,'index'])->name('company.index');
