@@ -38,7 +38,7 @@ class CompanyController extends Controller
             'rc' => 'required',
             'email' => 'required|email|unique:App\Models\Company,email',
             'rl' => 'required|alpha_spaces|max:30',
-            'site' => 'required|active_url',
+            'site' => 'required|url',
         ]);
     }
 }
