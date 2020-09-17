@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Company;
+use Illuminate\Support\Facades\DB;
 
 class CompanyController extends Controller
 {
 
     public function index(){
 
-        $companies = Company::all();
+        $companies = DB::table('companies')->simplePaginate(3);
 
         return view('company',compact('companies'));
 
