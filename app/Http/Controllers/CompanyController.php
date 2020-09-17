@@ -33,12 +33,12 @@ class CompanyController extends Controller
     private function validateRequest()
     {
         return request()->validate([
-            'name' => 'required|max:50',
+            'name' => 'required|max:50|unique:App\Models\Company,name',
             'cui' => 'required|cif',
             'rc' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:App\Models\Company,email',
             'rl' => 'required|alpha_spaces|max:30',
-            'site' => 'required',
+            'site' => 'required|active_url',
         ]);
     }
 }

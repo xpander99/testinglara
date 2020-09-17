@@ -176,4 +176,18 @@ class CompanyManagementTest extends TestCase
         ]);
         $response->assertSessionHasErrors('cui');
     }
+    /** @test */
+    public function a_link_should_have_a_valid_form(){
+        $response = $this->post('/company',[
+            'name'=>'AGROCITY TECHNOLOGIES SRL',
+            'cui'=>'42602168',
+            'rc'=>'J40/6070/2020',
+            'email'=>'agrocity@agrocity.eu',
+            'rl'=>'Antonio Primera',
+            'site'=>'agrocity.eu'
+        ]);
+        $response->assertSessionHasErrors('site');
+    }
+
+
 }
