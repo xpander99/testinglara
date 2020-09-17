@@ -91,5 +91,24 @@
     </form>
 
 </div>
+<!--- Companies list ---->
+<h1 class="text-center mt-10 text-4xl font-medium uppercase tracking-wide text-gray-700">Lista firme</h1>
+<div class="flex justify-around mt-4">
+    @foreach($companies as $company)
+    <div class="max-w-sm rounded overflow-hidden shadow-lg px-16 py-16">
+        <div class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">{{ $company->name }}</div>
+        <div class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">{{ $company->cui }}</div>
+        <div class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">{{ $company->rc }}</div>
+        <div class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">{{ $company->email }}</div>
+        <div class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">{{ $company->rl }}</div>
+        <div class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">{{ $company->site }}</div>
+    </div>
+    @endforeach
+</div>
+
+<div class="mt-8">
+    {{$companies->links()}}
+</div>
+
 </body>
 </html>
