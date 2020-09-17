@@ -189,5 +189,4 @@ class CompanyManagementTest extends TestCase
         $response->assertSessionHasErrors('site');
     }
 
-
 }
